@@ -3,4 +3,5 @@ Rails.application.routes.draw do
 
   # get '/', to: 'home#welcome'
   get '/sectors', to: 'sectors#index'
+  get '/sectors/:id', to: 'sectors#show'
 end

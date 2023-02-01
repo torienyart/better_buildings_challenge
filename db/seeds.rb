@@ -5,3 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+# sector_1 = Sector.create!(sector_name:'Data Centers', sufficient_staff: true)
+# sector_2 = Sector.create!(sector_name:'Commercial Real Estate', sufficient_staff: false)
+# sector_3 = Sector.create!(sector_name:'Commercial Real Estate', sufficient_staff: false)
+
