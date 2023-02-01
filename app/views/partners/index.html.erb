@@ -1,0 +1,8 @@
+<h1>Meet The Partners</h1>
+
+<% @partners.each do |partner| %>
+  <h3><%=partner.name%></h3>
+  <p>Goal Achiever: <%=partner.goal_achiever%></p>
+  <p>Joined the Program On: <%=partner.created_at%></p>
+  <p>Last Updated On: <%=partner.updated_at%></p>
+<% end %>

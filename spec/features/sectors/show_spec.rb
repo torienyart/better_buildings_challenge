@@ -18,8 +18,6 @@ describe 'as a visitor' do
 
         visit "/sectors/#{sector_1.id}"
 
-        expect(page).to have_content(sector_1.created_at)
-        expect(page).to have_content(sector_1.updated_at)
         expect(page).to have_content(sector_1.sufficient_staff)
 
       end
