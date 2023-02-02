@@ -5,6 +5,7 @@ class CreatePartners < ActiveRecord::Migration[5.2]
       t.boolean :goal_achiever
 
       t.timestamps
+      t.references :sector
     end
   end
 end

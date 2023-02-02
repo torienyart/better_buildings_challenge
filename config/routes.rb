@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   get '/sectors/:id', to: 'sectors#show'
 
   get '/partners', to: 'partners#index'
+  get '/partners/:id', to: 'partners#show'
 end

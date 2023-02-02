@@ -20,6 +20,8 @@ ActiveRecord::Schema.define(version: 2023_02_01_212320) do
     t.boolean "goal_achiever"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "sector_id"
+    t.index ["sector_id"], name: "index_partners_on_sector_id"
   end
 
   create_table "sectors", force: :cascade do |t|
