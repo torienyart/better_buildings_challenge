@@ -4,7 +4,7 @@ describe 'as a visitor' do
   describe "When I visit '/child_table_name/:id'" do
     it "I see the child with that id including the child's attributes"do
     @sector_1 = Sector.create!(sector_name:'Data Centers', sufficient_staff: true, funding: 1000000)
-    partner_1 = Partner.create!(name:'IKEA', goal_achiever: false, sector_id: @sector_1.id)
+    partner_1 = Partner.create!(name:'IKEA', goal_achiever: false, sector_id: @sector_1.id, btu_22: 235789000)
 
     visit "/partners/#{partner_1.id}"
     
@@ -13,6 +13,8 @@ describe 'as a visitor' do
     expect(page).to have_content(partner_1.sector_id)
     expect(page).to have_content(partner_1.created_at)
     expect(page).to have_content(partner_1.updated_at)
+    expect(page).to have_content(partner_1.btu_22)
+
 
     end
   end

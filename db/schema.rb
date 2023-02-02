@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 2023_02_01_212320) do
   create_table "partners", force: :cascade do |t|
     t.string "name"
     t.boolean "goal_achiever"
+    t.integer "btu_22"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "sector_id"
