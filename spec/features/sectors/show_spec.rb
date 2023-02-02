@@ -7,17 +7,18 @@ describe 'as a visitor' do
       # let(:sector_2){Sector.create!(sector_name:'Commercial Real Estate', sufficient_staff: false)}
 
       it 'shows the parent' do
-        sector_1 = Sector.create!(sector_name:'Data Centers', sufficient_staff: true)
-        visit "/sectors/#{sector_1.id}"
+        sector_1 = Sector.create!(sector_name:'Data Centers', sufficient_staff: true, funding: 1000000)
+          visit "/sectors/#{sector_1.id}"
 
         expect(page).to have_content(sector_1.sector_name)
       end
 
       it 'shows the parents attributes' do
-        sector_1 = Sector.create!(sector_name:'Data Centers', sufficient_staff: true)
+        sector_1 = Sector.create!(sector_name:'Data Centers', sufficient_staff: true, funding: 1000000)
 
         visit "/sectors/#{sector_1.id}"
 
+        expect(page).to have_content(sector_1.funding)
         expect(page).to have_content(sector_1.sufficient_staff)
 
       end
