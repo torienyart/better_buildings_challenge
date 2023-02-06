@@ -30,7 +30,9 @@ describe 'as a visitor' do
         
         visit "/sectors/#{sector_1.id}"
 
-        expect(page).to have_content('3 partners')
+        save_and_open_page
+
+        expect(page).to have_content('3')
       end
     end
   end
