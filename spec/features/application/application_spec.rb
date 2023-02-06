@@ -21,4 +21,15 @@ describe 'application view' do
 
     expect(page).to have_link('Partners')
   end
+  
+  it 'routes to the partners page' do
+    sector_1 = Sector.create!(sector_name:'Data Centers', sufficient_staff: true, funding: 1000000)
+    partner_1 = Partner.create!(name:'Intuit', goal_achiever: false, sector_id: sector_1.id, btu_22: 534789025)
+
+    visit '/sectors'
+
+    click_on 'Partners'
+
+    expect(page.current_path).to eq('/partners')
+  end
 end
