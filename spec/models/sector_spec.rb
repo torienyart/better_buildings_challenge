@@ -14,4 +14,15 @@ RSpec.describe Sector do
       expect(Sector.order_by_created.last).to eq(sector_1)
     end
   end
+
+  describe 'show page methods' do
+    it 'can count the number of partners belonging to a sector' do
+      sector_1 = Sector.create!(sector_name:'Data Centers', sufficient_staff: true, funding: 1000000)
+      partner_1 = Partner.create!(name:'Intuit', goal_achiever: false, sector_id: sector_1.id, btu_22: 534789025)
+      partner_2 = Partner.create!(name:'Century Link', goal_achiever: false, sector_id: sector_1.id, btu_22: 457396)
+      partner_3 = Partner.create!(name:'Intel Corporation', sector_id: sector_1.id,goal_achiever: true, btu_22: 209384)
+
+      expect(sector_1.partner_count).to eq(3)
+    end
+  end
 end
