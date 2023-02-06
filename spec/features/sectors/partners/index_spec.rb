@@ -25,6 +25,7 @@ describe 'As a visitor' do
 
         visit "/sectors/#{sector_1.id}/partners"
 
+        save_and_open_page
         expect(page).to have_content(partner_1.goal_achiever)
         expect(page).to have_content(partner_1.updated_at)
         expect(page).to have_content(partner_1.created_at)

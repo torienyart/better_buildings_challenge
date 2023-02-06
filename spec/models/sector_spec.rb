@@ -12,7 +12,6 @@ RSpec.describe Sector do
 
       expect(Sector.order_by_created.first).to eq(sector_4)
       expect(Sector.order_by_created.last).to eq(sector_1)
-
     end
   end
 end

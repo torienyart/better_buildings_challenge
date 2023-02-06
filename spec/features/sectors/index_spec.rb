@@ -11,6 +11,33 @@ describe 'As a visitor' do
       expect(page).to have_content(sector_1.sector_name)
       expect(page).to have_content(sector_2.sector_name)
     end
+
+    it 'I see that records are ordered by most recently created first' do
+      sector_2 = Sector.create!(sector_name:'Data Centers', sufficient_staff: true, funding: 1000000)
+      sector_1 = Sector.create!(sector_name:'Commercial Real Estate', sufficient_staff: false, funding: 2000000)
+      sector_3 = Sector.create!(sector_name:'Higher Education', sufficient_staff: false, funding: 100000)
+
+      visit '/sectors'
+
+      expect(sector_3.sector_name).to appear_before(sector_1.sector_name)
+      expect(sector_1.sector_name).to appear_before(sector_2.sector_name)
+    end
+
+    it 'And next to each of the records I see when it was created' do
+      sector_1 = Sector.create!(sector_name:'Data Centers', sufficient_staff: true, funding: 1000000)
+      sector_2 = Sector.create!(sector_name:'Commercial Real Estate', sufficient_staff: false, funding: 2000000)
+      sector_3 = Sector.create!(sector_name:'Higher Education', sufficient_staff: false, funding: 100000)
+
+      visit '/sectors'
+
+      expect(page).to have_content(sector_1.created_at)
+      expect(page).to have_content(sector_2.created_at)
+      expect(page).to have_content(sector_3.created_at)
+      save_and_open_page
+
+    end
   end
+
+
 
 end

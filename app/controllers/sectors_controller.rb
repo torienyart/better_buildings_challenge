@@ -1,6 +1,6 @@
 class SectorsController < ApplicationController
   def index
-    @sectors = Sector.all
+    @sectors = Sector.order_by_created
   end
 
   def show
