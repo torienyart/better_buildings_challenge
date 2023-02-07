@@ -7,7 +7,14 @@ class SectorsController < ApplicationController
     @sector = Sector.find(params[:id])
   end
 
-  def new
-    
+  def create
+    @new_sector = Sector.create(sector_params)
+    redirect_to "/sectors"
+  end
+
+
+  private
+  def sector_params
+    params.permit(:sector_name, :sufficient_staff, :funding)
   end
 end
