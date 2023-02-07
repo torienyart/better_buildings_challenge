@@ -4,3 +4,6 @@
 <p>Sufficiently Staffed: <%=@sector.sufficient_staff%></p>
 <br>
 <%= link_to "View #{@sector.sector_name} Partners", "/sectors/#{@sector.id}/partners"%>
+<br>
+<%= link_to "Update Sector", "/sectors/#{@sector.id}/edit"%>
+

@@ -49,5 +49,21 @@ describe 'as a visitor' do
         expect(page.current_path).to eq("/sectors/#{sector_1.id}/partners")
       end
     end
+
+    describe "I see a link to update the parent 'Update Parent'" do
+      it 'has a clickable link' do
+        sector_1 = Sector.create!(sector_name:'Data Centers', sufficient_staff: true, funding: 1000000)
+        partner_1 = Partner.create!(name:'Intuit', goal_achiever: false, sector_id: sector_1.id, btu_22: 534789025)
+        partner_2 = Partner.create!(name:'Century Link', goal_achiever: false, sector_id: sector_1.id, btu_22: 457396)
+        partner_3 = Partner.create!(name:'Intel Corporation', sector_id: sector_1.id,goal_achiever: true, btu_22: 209384)
+
+
+        visit "/sectors/#{sector_1.id}"
+        
+        click_on "Update Sector"
+
+        expect(page.current_path).to eq("/sectors/#{sector_1.id}/edit")
+      end
+    end
   end
 end

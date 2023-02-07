@@ -12,6 +12,9 @@ class SectorsController < ApplicationController
     redirect_to "/sectors"
   end
 
+  def edit
+    
+  end
 
   private
   def sector_params
