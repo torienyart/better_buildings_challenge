@@ -30,9 +30,23 @@ describe 'as a visitor' do
         
         visit "/sectors/#{sector_1.id}"
 
-        save_and_open_page
-
         expect(page).to have_content('3')
+      end
+    end
+    
+    describe "I see a link to take me to that parent's `child_table_name` page" do
+      it 'has a clickable link' do
+        sector_1 = Sector.create!(sector_name:'Data Centers', sufficient_staff: true, funding: 1000000)
+        partner_1 = Partner.create!(name:'Intuit', goal_achiever: false, sector_id: sector_1.id, btu_22: 534789025)
+        partner_2 = Partner.create!(name:'Century Link', goal_achiever: false, sector_id: sector_1.id, btu_22: 457396)
+        partner_3 = Partner.create!(name:'Intel Corporation', sector_id: sector_1.id,goal_achiever: true, btu_22: 209384)
+
+
+        visit "/sectors/#{sector_1.id}"
+        
+        click_on "View #{sector_1.sector_name} Partners"
+
+        expect(page.current_path).to eq("/sectors/#{sector_1.id}/partners")
       end
     end
   end

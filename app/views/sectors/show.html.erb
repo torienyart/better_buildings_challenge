@@ -2,3 +2,5 @@
 <h3>Number of Partners: <%=@sector.partner_count%></h3>
 <p>Funding: <%=@sector.funding%></p>
 <p>Sufficiently Staffed: <%=@sector.sufficient_staff%></p>
+<br>
+<%= link_to "View #{@sector.sector_name} Partners", "/sectors/#{@sector.id}/partners"%>
