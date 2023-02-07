@@ -13,7 +13,13 @@ class SectorsController < ApplicationController
   end
 
   def edit
-    
+    @sector = Sector.find(params[:id])
+  end
+
+  def update
+    sector = Sector.find(params[:id])
+    sector.update(sector_params)
+    redirect_to "/sectors/#{sector.id}"
   end
 
   private

@@ -5,5 +5,5 @@
 <br>
 <%= link_to "View #{@sector.sector_name} Partners", "/sectors/#{@sector.id}/partners"%>
 <br>
-<%= link_to "Update Sector", "/sectors/#{@sector.id}/edit"%>
+<%=link_to "Update Sector", "/sectors/#{@sector.id}/edit", method: :get%>
 
