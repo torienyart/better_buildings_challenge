@@ -11,6 +11,8 @@ Rails.application.routes.draw do
 
   get '/partners', to: 'partners#index'
   get '/partners/:id', to: 'partners#show'
+  get '/partners/:id/edit', to: 'partners#edit'
+  patch '/partners/:id', to: 'partners#update'
 
   get '/sectors/:id/partners', to: 'sector_partners#index'
   get '/sectors/:id/partners/new', to: 'sector_partners#new'

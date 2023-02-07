@@ -1,0 +1,18 @@
+<%= form_with url: "/partners/#{@partner.id}", method: :patch, local: true do |form| %>
+  <%= form.label :name %>
+  <br>
+  <%= form.text_field :name %>
+  <br>
+  <br>
+  <%= form.label :goal_achiever %>
+  <br>
+  <%= form.radio_button :goal_achiever, 'True'%> True<br />
+  <%= form.radio_button :goal_achiever, 'False'%> False<br />
+  <br>
+  <%= form.label :btu_22 %>
+  <br>
+  <%= form.text_field :btu_22 %>
+  <br>
+  <br>
+  <%= form.submit "Update Partner" %>
+<% end %>
