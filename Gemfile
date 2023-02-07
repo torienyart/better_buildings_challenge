@@ -44,6 +44,7 @@ group :development, :test do
   gem 'simplecov'
   gem 'orderly'
   gem 'shoulda-matchers', '~> 5.0'
+  gem "net-http"
 end
 
 group :development do

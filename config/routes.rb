@@ -13,4 +13,7 @@ Rails.application.routes.draw do
   get '/partners/:id', to: 'partners#show'
 
   get '/sectors/:id/partners', to: 'sector_partners#index'
+  get '/sectors/:id/partners/new', to: 'sector_partners#new'
+  post '/sectors/:id/partners', to: 'sector_partners#create'
+
 end

@@ -9,3 +9,6 @@
   <p>Joined the Program On: <%=partner.created_at%></p>
   <p>Last Updated On: <%=partner.updated_at%></p>
 <% end %>
+<br>
+<br>
+<%= link_to "Track New Partner", "/sectors/#{@sector.id}/partners/new" %>
