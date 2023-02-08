@@ -1,0 +1,18 @@
+<%=form_with url: "/sectors/#{@sector.id}", method: :patch, local: true do |form| %>
+  <%= form.label :sector_name %>
+  <br>
+  <%= form.text_field :sector_name %>
+  <br>
+  <br>
+  <%= form.label :sufficient_staff %>
+  <br>
+  <%= form.radio_button :sufficient_staff, 'True'%> True<br />
+  <%= form.radio_button :sufficient_staff, 'False'%> False<br />
+  <br>
+  <%= form.label :funding %>
+  <br>
+  <%= form.text_field :funding %>
+  <br>
+  <br>
+  <%= form.submit 'Update Sector' %>
+<% end %>

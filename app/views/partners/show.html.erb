@@ -1,0 +1,10 @@
+<h1><%=@partner.name%></h1>
+<p>Sector <%=@partner.sector_id%></p>
+<p>Goal Achiever: <%=@partner.goal_achiever%></p>
+<p>2022 BTU Output <%=@partner.btu_22%></p>
+<p>Joined On: <%=@partner.created_at%></p>
+<p>Updated On <%=@partner.updated_at%></p>
+<br>
+<br>
+<%= link_to 'Update Partner', "/partners/#{@partner.id}/edit"%>
+
